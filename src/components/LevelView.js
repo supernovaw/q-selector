@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import "./LevelView.css";
+import "./styles/LevelView.css";
 
 // The assigned variable helps prevent the "lens" from going outside of vertical (tall) images
 function assignImageRatioCssVar(imgRef, targetRef) {

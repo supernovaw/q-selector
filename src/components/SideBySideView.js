@@ -1,8 +1,8 @@
 import LevelView from "./LevelView";
 import { useRef, useState } from "react";
-import "./SideBySideView.css";
-import constants from "./constants";
-import levelTitleFormatter from "./levelTitleFormatter";
+import "./styles/SideBySideView.css";
+import constants from "../constants";
+import levelTitleFormatter from "../levelTitleFormatter";
 
 const { imgPathPrefix, levelSuffixes, imgPathSuffix } = constants;
 const genImgPath = (imgName, levelSuffix) => imgPathPrefix + imgName + levelSuffix + imgPathSuffix;

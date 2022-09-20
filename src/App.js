@@ -4,7 +4,7 @@ import SideBySideView from "./SideBySideView";
 const App = () => {
   return (
     <div className="App">
-      <SideBySideView imgName={"example"}
+      <SideBySideView imgName={"test-vertical"}
         sizes={{
           "-raw": 463045,
           "-high": 140890,

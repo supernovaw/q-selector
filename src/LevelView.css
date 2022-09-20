@@ -1,21 +1,29 @@
+.LevelView {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .LevelView .view-container {
   position: relative;
   overflow: hidden;
+  aspect-ratio: var(--image-aspect-ratio);
   --pointer-radius: 100px;
   --pointer-scale: 2;
 }
 
+.LevelView .view-container:active .pointer {
+  opacity: 0.2;
+}
+
 .LevelView .view-container .pointer {
   position: absolute;
-  width: calc(var(--pointer-scale) * 100%);
-  height: calc(var(--pointer-scale) * 100%);
-  left: calc(var(--pointer-x) - var(--pointer-radius));
-  top: calc(var(--pointer-y) - var(--pointer-radius));
-  background-position-x: calc(calc(var(--pointer-x) * calc(-1 * var(--pointer-scale))) + var(--pointer-radius));
-  background-position-y: calc(calc(var(--pointer-y) * calc(-1 * var(--pointer-scale))) + var(--pointer-radius));
-  background-size: 100% 100%;
+  transition: opacity 0.1s ease-out;
+  transform-origin: var(--pointer-x) var(--pointer-y);
+  transform: scale(var(--pointer-scale));
+  clip-path: circle(calc(var(--pointer-radius) / var(--pointer-scale)) at var(--pointer-x, 0) var(--pointer-y, 0));
   pointer-events: none;
-  clip-path: circle(var(--pointer-radius) at var(--pointer-radius) var(--pointer-radius));
 }
 
 .LevelView .view-container .pointer-shape {
@@ -34,5 +42,7 @@
 
 .LevelView .view-container img {
   width: 100%;
+  height: 100%;
+  object-fit: contain;
   display: block;
 }

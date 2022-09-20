@@ -1,8 +1,6 @@
 .SideBySideView {
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.SideBySideView>.LevelView {
-  flex: 0 0 50%;
+  display: grid;
+  height: 100%;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
 }

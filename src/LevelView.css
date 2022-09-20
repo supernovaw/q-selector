@@ -1,0 +1,36 @@
+.LevelView {
+  margin: 50px;
+  position: relative;
+  overflow: hidden;
+  --pointer-radius: 100px;
+  --pointer-scale: 2;
+}
+
+.LevelView .pointer {
+  position: absolute;
+  width: calc(var(--pointer-scale) * 100%);
+  height: calc(var(--pointer-scale) * 100%);
+  left: calc(var(--pointer-x) - var(--pointer-radius));
+  top: calc(var(--pointer-y) - var(--pointer-radius));
+  background-position-x: calc(calc(var(--pointer-x) * calc(-1 * var(--pointer-scale))) + var(--pointer-radius));
+  background-position-y: calc(calc(var(--pointer-y) * calc(-1 * var(--pointer-scale))) + var(--pointer-radius));
+  background-size: 100% 100%;
+  pointer-events: none;
+  clip-path: circle(var(--pointer-radius) at var(--pointer-radius) var(--pointer-radius));
+}
+
+.LevelView .pointer-shape {
+  position: absolute;
+  left: calc(var(--pointer-x) - var(--pointer-radius));
+  top: calc(var(--pointer-y) - var(--pointer-radius));
+  width: calc(2 * var(--pointer-radius));
+  height: calc(2 * var(--pointer-radius));
+  border-radius: var(--pointer-radius);
+  box-shadow: 0 0 15px #2227;
+  pointer-events: none;
+}
+
+.LevelView img {
+  width: 100%;
+  display: block;
+}

@@ -1,12 +1,11 @@
-.LevelView {
-  margin: 50px;
+.LevelView .view-container {
   position: relative;
   overflow: hidden;
   --pointer-radius: 100px;
   --pointer-scale: 2;
 }
 
-.LevelView .pointer {
+.LevelView .view-container .pointer {
   position: absolute;
   width: calc(var(--pointer-scale) * 100%);
   height: calc(var(--pointer-scale) * 100%);
@@ -19,7 +18,7 @@
   clip-path: circle(var(--pointer-radius) at var(--pointer-radius) var(--pointer-radius));
 }
 
-.LevelView .pointer-shape {
+.LevelView .view-container .pointer-shape {
   position: absolute;
   left: calc(var(--pointer-x) - var(--pointer-radius));
   top: calc(var(--pointer-y) - var(--pointer-radius));
@@ -30,7 +29,7 @@
   pointer-events: none;
 }
 
-.LevelView img {
+.LevelView .view-container img {
   width: 100%;
   display: block;
 }

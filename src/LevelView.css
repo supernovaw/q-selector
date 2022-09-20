@@ -25,8 +25,11 @@
   width: calc(2 * var(--pointer-radius));
   height: calc(2 * var(--pointer-radius));
   border-radius: var(--pointer-radius);
-  box-shadow: 0 0 15px #2227;
   pointer-events: none;
+}
+
+.LevelView:hover .view-container .pointer-shape {
+  box-shadow: 0 0 10px 5px #0008;
 }
 
 .LevelView .view-container img {

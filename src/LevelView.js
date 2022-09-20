@@ -6,11 +6,11 @@ const LevelView = ({ imagePath, parentRef }) => {
     parentRef.current.style.setProperty("--pointer-y", e.nativeEvent.layerY + "px");
   };
   return (
-    <div className="LevelView" onMouseMove={onMouseMove}>
+    <div className="LevelView">
       <div>Title</div>
-      <div className="view-container">
+      <div className="view-container" onMouseMove={onMouseMove}>
         <div className="pointer" style={{ backgroundImage: `url(${imagePath})` }} />
-        <img src={imagePath} />
+        <img src={imagePath} draggable={false} />
         <div className="pointer-shape" />
       </div>
     </div>

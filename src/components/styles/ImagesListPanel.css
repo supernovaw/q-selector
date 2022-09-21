@@ -1,0 +1,68 @@
+.ImagesListPanel {
+  user-select: none;
+  overflow: scroll;
+  font-size: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #131313;
+}
+
+.ImagesListPanel table {
+  border-spacing: 0;
+}
+
+.ImagesListPanel tr {
+  height: 1.6em;
+  color: grey;
+  transition: .1s ease-out;
+}
+
+.ImagesListPanel tr[q-level] {
+  color: white;
+}
+
+.ImagesListPanel tr.current {
+  background-color: #222;
+}
+
+.ImagesListPanel td {
+  padding-left: 5px;
+  padding-right: 5px;
+  transition: color .1s ease-out;
+}
+
+.ImagesListPanel td:first-child {
+  padding-left: 10px;
+}
+
+.ImagesListPanel td:last-child {
+  text-align: start;
+  width: 3em;
+  padding-right: 10px;
+}
+
+.ImagesListPanel td.show-name {
+  text-align: start;
+}
+
+.ImagesListPanel td.show-index {
+  text-align: end;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+tr[q-level="-raw"] td.level {
+  color: white;
+}
+
+tr[q-level="-low"] td.level {
+  color: #e91345;
+}
+
+tr[q-level="-mid"] td.level {
+  color: #e4d534;
+}
+
+tr[q-level="-high"] td.level {
+  color: rgb(17, 195, 76);
+}

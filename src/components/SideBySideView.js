@@ -1,5 +1,5 @@
 import LevelView from "./LevelView";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import "./styles/SideBySideView.css";
 import constants from "../constants";
 import levelTitleFormatter from "../levelTitleFormatter";
@@ -8,16 +8,15 @@ const { imgPathPrefix, levelSuffixes, imgPathSuffix } = constants;
 const genImgPath = (imgName, levelSuffix) => imgPathPrefix + imgName + levelSuffix + imgPathSuffix;
 //                                   i.e.: "/images/" + "20220920_044901" + "-high" + ".jpg"
 
-const SideBySideView = ({ imgName, sizes }) => {
+const SideBySideView = ({ imgName, sizes, level, onLevelSelected }) => {
   const parentRef = useRef();
-  const [selected, onSelect] = useState(null);
 
   return (
     <div className="SideBySideView" ref={parentRef}>
       {levelSuffixes.map(lvlSuf => (
         <LevelView key={lvlSuf} {...{ parentRef }}
-          onSelect={() => onSelect(lvlSuf)}
-          selected={lvlSuf === selected}
+          onSelect={() => onLevelSelected(lvlSuf)}
+          selected={lvlSuf === level}
           title={levelTitleFormatter(lvlSuf, sizes)}
           imagePath={genImgPath(imgName, lvlSuf)} />
       ))}
